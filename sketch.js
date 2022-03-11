@@ -15,21 +15,15 @@ function setup(){
 path=createSprite(200,200);
 path.addImage(pathImg);
 path.velocityY = 4;
-path.scale=1.2;
+path.scale = 1.2;
 
 //criando o menino correndo
 boy = createSprite(180,340,30,30);
 boy.scale=0.08;
 boy.addAnimation("JakeRunning",boyImg);
   
-
 leftBoundary=createSprite(0,0,100,800);
-
- leftBoundary.invisible = false;
- leftBoundary.visible = true;
- leftBoundary.invisible = true;
- leftBoundary.visible = false;
-
+leftBoundary.visible = false;
 
 rightBoundary=createSprite(410,0,100,800);
 rightBoundary.visible = false;
@@ -45,22 +39,10 @@ function draw() {
   boy.collide(edges[3]);
   boy.collide(leftBoundary);
   boy.collide(rightBoundary);
-  
-  
 
   if(path.y > 400 ){
     path.y = height/2;
   }
-
-  if(path.y > 400 ){
-   
-  path.y = height/2;
-  }
-
-  if(path.y > 400 ){
-path.y = height/2;}
-
-if(path.y > 400 ){path.y = height/2;}
   
   drawSprites();
 }
